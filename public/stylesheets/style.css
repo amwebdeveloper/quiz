@@ -1,8 +1,163 @@
+@font-face {
+	font-family: 'ionicons';
+	src: url('/fonts/ionicons.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+@font-face {
+	font-family: 'Hammersmith One';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Hammersmith One'), local('HammersmithOne'), url(http://fonts.gstatic.com/s/hammersmithone/v7/FWNn6ITYqL6or7ZTmBxRhq3fkYX5z1QtDUdIWoaaD_k.woff) format('woff');
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	font-size: 62.5%;
+	font-family: Open Sans, Lucida sans, Verdana, Arial;
+	color: #424242;
+	background: #E9E9E9;
 }
 
+header, main, footer {
+	font-size: 1.8em;
+	line-height: 2em;
+	text-align: center;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+header, footer {
+	padding: 1.5em;
+}
+header {
+	position: sticky;
+	top: 0;
+	box-shadow: 0 0 .1em #777;
+	text-align: left;
+	background: #424242;
+	color: #E9E9E9;
+}
+header h1, header h2 {
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: Hammersmith One;
+}
+footer {
+	top: auto;
+	bottom: 0;
+}
+main {
+	position: relative;
+	display: block;
+	min-height: 30em;
+	padding: 1em;
+	margin: 2em 0; 
+}
+.content {
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+}
+main .content {
+	max-width: 30em;
+}
 a {
-  color: #00B7FF;
+	color: #3299BB;
+}
+.icon {
+	font-family: ionicons;
+	font-size: 2.5em;
+	margin: 0;
+}
+/**********/
+/** menu **/
+/**********/
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav li {
+	display: inline;
+}
+nav li a {
+	transition: background .3s ease;
+	display: inline-block;
+	padding: .3em 1em;
+	background: #424242;
+	color: #FFF;
+	margin-left: 1em;
+	text-decoration: none;
+	border-radius: 2px;
+}
+nav li a:hover {
+	background: #FF9900;
+}
+nav li:FIRST-CHILD a{
+	margin-left: 0;
+}
+/*****************/
+/** formularios **/
+/*****************/
+form {
+	text-align: left;
+}
+form div {
+	margin: 0 0 1em 0;
+}
+input {
+	font-family: Open Sans, Lucida sans, Verdana, Arial;
+	font-size: 1em;
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+}
+.button,
+input[type="submit"] {
+	border: 1px solid #3299BB;
+	background: #3299BB;
+	color: #FFF;
+	padding: .3em 1em;
+	text-transform: uppercase;
+	border-radius: 2px;
+}
+.button {
+	text-decoration: none;
+}
+input[type="submit"]:hover {
+	cursor: pointer;
+}
+input[type="text"] {
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	padding: .5em;
+}
+label {
+	display: block;
+}
+.question {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.opciones a{
+	margin-left: 1em;
+}
+.opciones a:FIRST-CHILD{
+	margin-left: 0;
+}
+
+@media screen and (min-width:40em) {
+	#title, nav {display: inline-block; width: 45%;}
+	nav {text-align: right;}
+}
 }

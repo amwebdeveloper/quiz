@@ -1,8 +1,8 @@
 <form action="/quizes/answer" method="get">
-	<p>Pregunta: <%= pregunta %></p>
+	<p class="question">¿<%= pregunta %>?</p>
 	<div>
-		<label for="respuesta">Respuesta</label>
-		<input value="" type="text" placeholder="Escriba su respuesta" id="respuesta" name="respuesta"/>
+		<label for="respuesta">Escribe tú respuesta</label>
+		<input value="" type="text" placeholder="Por ejemplo: Armenia" id="respuesta" name="respuesta" required/>
 	</div>
 	<input value="Enviar" type="submit" />	
 </form>

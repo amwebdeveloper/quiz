@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quiz: Preguntas y respuestas</title>
+    <title>Quiz: Un juego de preguntas</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
 	<header>
-		<h1>Quiz</h1>
+		<div class="content">
+			<div id="title">
+				<h1>Quiz</h1>
+				<h2>Un juego de preguntas</h2>
+			</div>
+		    <nav>
+		    	<ul>
+		    		<li><a href="/">Inicio</a></li>
+		    		<li><a href="/quizes/question">Preguntas</a></li>
+		    	</ul>
+		    </nav>
+	    </div>
 	</header>
-    <nav></nav>
     <main>
-    	<%- body %>
+    	<div class="content">
+    		<%- body %>
+    	</div>
     </main>
-    <footer></footer>
+    <footer>
+    	<div class="content">
+    		<p><a href="https://es.wikipedia.org/wiki/Quiz" target="_blank">¿Qué es un Quiz?</a></p>
+    	</div>
+    </footer>
   </body>
 </html>

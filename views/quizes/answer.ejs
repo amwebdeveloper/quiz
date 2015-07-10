@@ -1,6 +1,10 @@
-<p><%= respuesta %></p>
+<h2>La respuesta es <%= respuesta %></h2>
 <% if (intentar) { %>
-<p><a href="/quizes/question">Vuelva a intentarlo</a></p>
+<p class="icon">&#xf3ab;</p>
+<h3>¿Quiéres volver a intentarlo?</h3>
+<p class="opciones"><a class="button" href="/quizes/question">Sí</a> <a class="button" href="/">No</a></p>
 <% } else { %>
-<p><a href="/">Inicio</a></p>
+<p class="icon">&#xf38e;</p>
+<h3>¡Enhorabuena! has acertado</h3>
+<p><a class="button" href="/">Inicio</a></p>
 <% } %>
