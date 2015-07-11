@@ -120,6 +120,7 @@ nav li a {
 	margin-left: 1em;
 	text-decoration: none;
 	border-radius: 2px;
+	background: #626262;
 }
 nav li a:hover {
 	background: #FF9900;
