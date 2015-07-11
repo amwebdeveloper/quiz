@@ -23,3 +23,10 @@ exports.answer = function (req, res) {
 			{title: "Quiz | Respuesta", respuesta: resultado, intentar: intentar}
 	);
 };
+
+exports.author = function (req, res) {
+	res.render(
+		'author',
+		{title: "Quiz | Autor"}
+	);
+};
