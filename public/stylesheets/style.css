@@ -179,7 +179,8 @@ label {
 }
 
 @media screen and (min-width:40em) {
-	#title, nav {display: inline-block; width: 45%;}
+	#title, nav {display: inline-block; width: 55%;}
+	#title {width: 40%;}
 	nav {text-align: right;}
 }
 }
