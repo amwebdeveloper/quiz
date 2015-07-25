@@ -8,13 +8,16 @@
 	font-family: 'Open Sans';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Open Sans'), local('OpenSans'), url(http://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+	src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v10/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 @font-face {
 	font-family: 'Hammersmith One';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Hammersmith One'), local('HammersmithOne'), url(http://fonts.gstatic.com/s/hammersmithone/v7/FWNn6ITYqL6or7ZTmBxRhq3fkYX5z1QtDUdIWoaaD_k.woff) format('woff');
+	src: local('Hammersmith One'), local('HammersmithOne'), url(https://fonts.gstatic.com/s/hammersmithone/v7/FWNn6ITYqL6or7ZTmBxRhq3fkYX5z1QtDUdIWoaaD_k.woff) format('woff');
+}
+html {
+	overflow-y: scroll;
 }
 body {
 	position: relative;
@@ -39,7 +42,7 @@ header, footer {
 	padding: 1.5em;
 }
 header {
-	position: sticky;
+	position: relative;
 	top: 0;
 	box-shadow: 0 0 .1em #777;
 	text-align: left;
@@ -50,16 +53,34 @@ header h1, header h2 {
 	margin: 0;
 	padding: 0;
 	text-transform: uppercase;
-	font-family: Hammersmith One;
+	font-family: "Hammersmith One";
 }
 footer {
+	background: #424242;
+	color: #E9E9E9;
 	top: auto;
 	bottom: 0;
+	text-align: left;
+}
+footer a {
+	color: #FFF;
+	text-decoration: none;
+}
+a[class^="e-"] {
+	font-family: "Ionicons";
+}
+.e-info:before,
+.e-github:before {
+	margin-right: .2em;
+	content: "\f233";
+}
+.e-info:before {
+	content:"\f149";
 }
 main {
 	position: relative;
 	display: block;
-	min-height: 30em;
+	min-height: 20.5em;
 	padding: 1em;
 	margin: 2em 0; 
 }
@@ -99,6 +120,7 @@ nav li a {
 	margin-left: 1em;
 	text-decoration: none;
 	border-radius: 2px;
+	background: #626262;
 }
 nav li a:hover {
 	background: #FF9900;
@@ -157,7 +179,8 @@ label {
 }
 
 @media screen and (min-width:40em) {
-	#title, nav {display: inline-block; width: 45%;}
+	#title, nav {display: inline-block; width: 55%;}
+	#title {width: 40%;}
 	nav {text-align: right;}
 }
 }
