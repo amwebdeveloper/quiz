@@ -1,27 +1,30 @@
+var models = require("../models/models.js");
+
 /**
  * Recibe la pregunta
  */
 exports.question = function (req, res) {
-	res.render(
-			'quizes/question',
-			{title: "Quiz | Pregunta", pregunta: 'Capital de Italia'}
-	);
+	models.Quiz.findAll().success(function (quiz) {
+		res.render("quizes/question", {pregunta: quiz[0].pregunta});
+	});
 };
 
 /**
  * Envía resultado de la respuesta
  */
 exports.answer = function (req, res) {
-	var resultado = "Incorrecta",
+	models.Quiz.findAll().success(function (quiz) {
+		var resultado = "Incorrecta",
 		intentar = true;
-	if (req.query.respuesta === "Roma") {
-		resultado = "Correcta";
-		intentar = false;
-	}
-	res.render(
-			'quizes/answer', 
-			{title: "Quiz | Respuesta", respuesta: resultado, intentar: intentar}
-	);
+		if (req.query.respuesta === quiz[0].respuesta) {
+			resultado = "Correcta";
+			intentar = false;
+		}
+		res.render(
+				'quizes/answer', 
+				{title: "Quiz | Respuesta", respuesta: resultado, intentar: intentar}
+		);
+	});
 };
 
 exports.author = function (req, res) {
