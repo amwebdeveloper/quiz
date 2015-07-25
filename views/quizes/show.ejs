@@ -1,0 +1,8 @@
+<form action="/quizes/<%= quiz.id %>/answer" method="get">
+	<p class="question">¿<%= quiz.pregunta %>?</p>
+	<div>
+		<label for="respuesta">Escribe tú respuesta</label>
+		<input tabindex="1" value="" type="text" placeholder="Por ejemplo: Armenia" id="respuesta" name="respuesta" required/>
+	</div>
+	<input value="Enviar" type="submit" tabindex="2"/>	
+</form>

@@ -2,7 +2,7 @@
 <% if (intentar) { %>
 <p class="icon">&#xf3ab;</p>
 <h3>¿Quiéres volver a intentarlo?</h3>
-<p class="opciones"><a class="button" href="/quizes/question">Sí</a> <a class="button" href="/">No</a></p>
+<p class="opciones"><a class="button" href="/quizes/<%= quiz.id %>">Sí</a> <a class="button" href="/">No</a></p>
 <% } else { %>
 <p class="icon">&#xf38e;</p>
 <h3>¡Enhorabuena! has acertado</h3>

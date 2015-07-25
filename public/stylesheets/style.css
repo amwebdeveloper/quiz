@@ -28,7 +28,16 @@ body {
 	color: #424242;
 	background: #E9E9E9;
 }
-
+table {
+	text-align: left;
+	border-collapse: collapse;
+}
+th, td {
+	padding: .7em;
+}
+tr {
+	border-bottom: 1px solid #CCC;
+}
 header, main, footer {
 	font-size: 1.8em;
 	line-height: 2em;
