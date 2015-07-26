@@ -31,12 +31,23 @@ body {
 table {
 	text-align: left;
 	border-collapse: collapse;
+	width: 100%;
+	background: #FFF;
+	border-radius: 2px;
+	margin-top: 1em;
+	box-shadow: 0 1px .2em -1px #555;	
 }
 th, td {
 	padding: .7em;
 }
 tr {
 	border-bottom: 1px solid #CCC;
+}
+tbody tr:hover {
+	background: #FAFAFA;
+}
+td a {
+	display: block;
 }
 header, main, footer {
 	font-size: 1.8em;
@@ -76,15 +87,22 @@ footer a {
 	text-decoration: none;
 }
 a[class^="e-"] {
-	font-family: "Ionicons";
+	display: block;
+	text-align: center;
 }
-.e-info:before,
+a[class^="e-"]:before,
+a[class^="e-"]:after {
+	font-family: "Ionicons";
+	margin-right: .2em;	
+}
 .e-github:before {
-	margin-right: .2em;
 	content: "\f233";
 }
 .e-info:before {
 	content:"\f149";
+}
+.e-author:before {
+	content: "\f2d8";
 }
 main {
 	position: relative;
@@ -112,6 +130,9 @@ a {
 /**********/
 /** menu **/
 /**********/
+nav {
+	margin-top: 1em;
+}
 nav ul {
 	list-style: none;
 	margin: 0;
@@ -183,13 +204,22 @@ label {
 .opciones a{
 	margin-left: 1em;
 }
-.opciones a:FIRST-CHILD{
-	margin-left: 0;
+/** questions **/
+#question{
+	width: 75%;
 }
-
+#id {
+	width: 25%;
+}
+#search-questions input{
+	display: inline-block;
+	width: calc(100% / 2 - .2em);
+}
 @media screen and (min-width:40em) {
 	#title, nav {display: inline-block; width: 55%;}
 	#title {width: 40%;}
-	nav {text-align: right;}
+	nav {text-align: right; margin-top: 0;}
+	footer a[class^="e-"] {display: inline-block; margin-right: 1em; border-left: 1px solid #FFF; padding-left: 1em;}
+	footer a[class^="e-"]:first-child {border-left: 0; padding-left: 0;}
 }
 }

@@ -1,13 +1,21 @@
-<table>
+<form id="search-questions" action="/quizes" method="get">
+	<div>
+		<label for="seatch">Buscar preguntas:</label>
+		<input value="" type="text" placeholder="Por ejemplo: Italia" id="buscar" name="search" required/>
+		<input value="Buscar" type="submit"/>
+	</div>
+</form>
+
+<table id="questions">
 	<thead>
 		<tr>
-			<th>Id</th>
-			<th>Pregunta</th>
+			<th id="id">Id</th>
+			<th id="question">Pregunta</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% 
-		for (var i=0; i<quizes.length; i++) { 
+		for (var i=0; i<quizes.length; i++) {
 		%>
 		<tr>
 			<td><%= quizes[i].id %></td>

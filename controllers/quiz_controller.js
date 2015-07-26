@@ -1,7 +1,14 @@
 var models = require("../models/models.js");
 
 /**
- * 
+ * Función para unir cadena de búsqueda
+ */
+var querySearch = function (query) {
+	return '%'+query+'%'.replace(" ", "%");	
+};
+
+/**
+ * Autoload.
  */
 exports.load = function (req, res, next, quizId) {
 	models.Quiz.find(quizId).then(function (quiz) {
@@ -12,20 +19,32 @@ exports.load = function (req, res, next, quizId) {
 			next(new Error("No existe quizId "+quizId));
 		}
 	}).catch(function (error) {
-		next(error);
+			next(error);
 		}
 	);
 };
 
 /**
- * 
+ * Muestra todas las preguntas de la base de datos.
+ * Si se hace una búsqueda sobre las preguntas, muestra 
+ * las preguntas que contengan la cadena buscada ordenadas alfabéticamente.
+ * En caso contrario muestra las preguntas en el orden que aparecen en la
+ * tabla de la base de datos.
  */
 exports.index = function (req, res) {
-	models.Quiz.findAll().then(
-		function (quizes) {
-			res.render('quizes/index',{quizes: quizes});
-		}
-	)
+	if (req.query.search) {
+		models.Quiz.findAll({where: ["pregunta like ?", querySearch(req.query.search)], order: [["pregunta", "ASC" ]]}).then(
+			function (quizes) {			
+				res.render('quizes/index',{quizes: quizes});
+			}
+		)
+	} else {
+		models.Quiz.findAll().then(
+				function (quizes) {			
+					res.render('quizes/index',{quizes: quizes});
+				}
+			)
+	}
 };
 
 /**
