@@ -49,6 +49,10 @@ tbody tr:hover {
 td a {
 	display: block;
 }
+input {
+	font-size: 1em;
+	font-family: 'Open Sans';
+}
 header, main, footer {
 	font-size: 1.8em;
 	line-height: 2em;
@@ -86,12 +90,12 @@ footer a {
 	color: #FFF;
 	text-decoration: none;
 }
-a[class^="e-"] {
+*[class^="e-"] {
 	display: block;
 	text-align: center;
 }
-a[class^="e-"]:before,
-a[class^="e-"]:after {
+*[class^="e-"]:before,
+*[class^="e-"]:after {
 	font-family: "Ionicons";
 	margin-right: .3em;	
 }
@@ -106,6 +110,9 @@ a[class^="e-"]:after {
 }
 .e-edit:before {
 	content: "\f2bf";
+}
+.e-delete:before {
+	content: "\f37f";
 }
 main {
 	position: relative;
@@ -129,6 +136,13 @@ a {
 	font-family: ionicons;
 	font-size: 2.5em;
 	margin: 0;
+}
+button {
+	font-family: 'Open Sans';
+	line-height: 2.2em;
+}
+button:hover {
+	cursor: pointer;
 }
 /**********/
 /** menu **/
@@ -189,8 +203,16 @@ input[type="submit"] {
 .button {
 	text-decoration: none;
 }
-.button.min {
-	padding: 0 .2em;
+#eliminar {
+	display: inline;
+}
+button.min {
+	
+}
+.button.min,
+button.min {
+	display: inline-block;
+	padding: 0 .4em;
 	text-transform: none;
 	background: #29ABA4;
 	border-color: #29ABA4;
@@ -216,10 +238,13 @@ label {
 }
 /** questions **/
 #question{
-	width: 75%;
+	width: 40%;
 }
 #id {
-	width: 25%;
+	width: 10%;
+}
+#action {
+	width: 30%;
 }
 #search-questions input{
 	display: inline-block;

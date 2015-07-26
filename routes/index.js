@@ -26,6 +26,8 @@ router.post('/quizes/create', 				quizController.create);
 /** editar preguntas **/
 router.get('/quizes/:quizId(\\d+)/edit', 	quizController.edit);
 router.put('/quizes/:quizId(\\d+)', 		quizController.update);
+/** eliminar pregunta **/
+router.delete('/quizes/:quizId(\\d+)', 		quizController.destroy);
 /** autor **/
 router.get('/author', 						quizController.author);
 

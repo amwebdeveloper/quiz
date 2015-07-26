@@ -21,7 +21,12 @@
 		<tr>
 			<td><%= quizes[i].id %></td>
 			<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
-			<td><a class="e-edit button min" href="/quizes/<%= quizes[i].id %>/edit">Editar</a></td>
+			<td>
+				<a class="e-edit button min" href="/quizes/<%= quizes[i].id %>/edit">Editar</a>
+				<form id="eliminar" method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
+					<button class="e-delete button min" type="submit" onclick="return confirm('Está seguro');">Eliminar</button>
+				</form>
+			</td>
 		</tr>
 		<% } %>
 	</tbody>

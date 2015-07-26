@@ -129,6 +129,17 @@ exports.update = function (req, res) {
 };
 
 /**
+ * controlador para eliminar pregunta
+ */
+exports.destroy = function (req, res) {
+	req.quiz.destroy().then(function () {
+		res.redirect("/quizes");
+	}).catch(function (error) {
+		next(error);
+	});
+};
+
+/**
  * Página de autor
  */
 exports.author = function (req, res) {
