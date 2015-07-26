@@ -1,11 +1,11 @@
 <div>
 	<div>
-		<label for="pregunta">Escriba una pregunta:</label>
-		<input type="text" value="" name="quiz[pregunta]" id="pregunta" placeholder="Por ejemplo: Capital de Alemania" required="required"/>
+		<label for="pregunta">Pregunta:</label>
+		<input type="text" value="<%= quiz.pregunta %>" name="quiz[pregunta]" id="pregunta" placeholder="Por ejemplo: Capital de Alemania" required="required"/>
 	</div>
 	<div>
-		<label for="respuesta">Escriba una pregunta:</label>
-		<input type="text" value="" name="quiz[respuesta]" id="respuesta" placeholder="Por ejemplo: Berlín" required="required"/>		
+		<label for="respuesta">Respuesta:</label>
+		<input type="text" value="<%= quiz.respuesta %>" name="quiz[respuesta]" id="respuesta" placeholder="Por ejemplo: Berlín" required="required"/>		
 	</div>
 	<input type="submit" value="Guardar" />
 </div>

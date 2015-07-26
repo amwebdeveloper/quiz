@@ -35,15 +35,21 @@ exports.index = function (req, res) {
 	if (req.query.search) {
 		models.Quiz.findAll({where: ["pregunta like ?", querySearch(req.query.search)], order: [["pregunta", "ASC" ]]}).then(
 			function (quizes) {			
-				res.render('quizes/index',{quizes: quizes});
+				res.render('quizes/index',{quizes: quizes, errors: []});
 			}
-		)
+		).catch(function (error) {
+				next(error);
+			}
+		);
 	} else {
 		models.Quiz.findAll().then(
 				function (quizes) {			
-					res.render('quizes/index',{quizes: quizes});
+					res.render('quizes/index',{quizes: quizes, errors: []});
 				}
-			)
+			).catch(function (error) {
+				next(error);
+				}
+			);
 	}
 };
 
@@ -51,7 +57,7 @@ exports.index = function (req, res) {
  * Recibe la pregunta
  */
 exports.show = function (req, res) {
-	res.render("quizes/show", {quiz: req.quiz});
+	res.render("quizes/show", {quiz: req.quiz, errors: []});
 };
 
 /**
@@ -65,7 +71,7 @@ exports.answer = function (req, res) {
 	}
 	res.render(
 			'quizes/answer', 
-			{title: "Quiz | Respuesta", quiz: req.quiz, respuesta: resultado, intentar: intentar}
+			{title: "Quiz | Respuesta", quiz: req.quiz, respuesta: resultado, intentar: intentar, errors: []}
 	);
 };
 
@@ -75,19 +81,25 @@ exports.answer = function (req, res) {
 exports.new = function (req, res) {
 	var quiz = models.Quiz.build(
 		{
-			pregunta: "Pregunta",
-			respuesta: "Respuesta"
+			pregunta: "",
+			respuesta: ""
 		}		
 	);
-	res.render('quizes/new', {quiz: quiz});
+	res.render('quizes/new', {quiz: quiz, errors: []});
 };
 /**
  * Controlador para crear preguntas
  */
 exports.create = function (req, res) {
-	var quiz = models.Quiz.build(req.body.quiz);	
-	quiz.save({fields: ["pregunta", "respuesta"]}).then(function () {
-		res.redirect("/quizes");
+	var quiz = models.Quiz.build(req.body.quiz);
+	quiz.validate().then(function (err) {
+		if (err) {
+			res.render("quizes/new", {quiz: quiz, errors: err.errors});
+		} else {
+			quiz.save({fields: ["pregunta", "respuesta"]}).then(function () {
+				res.redirect("/quizes");
+			});
+		}
 	});
 };
 /**
@@ -96,6 +108,6 @@ exports.create = function (req, res) {
 exports.author = function (req, res) {
 	res.render(
 		'author',
-		{title: "Quiz | Autor"}
+		{title: "Quiz | Autor", errors: []}
 	);
 };

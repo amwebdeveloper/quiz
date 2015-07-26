@@ -6,7 +6,7 @@ var quizController = require('../controllers/quiz_controller')
  * Rutas o routes
  */
 router.get('/', function(req, res, next) {
-	res.render('index', {title: 'Bienvenido a Quiz'});
+	res.render('index', {title: 'Bienvenido a Quiz', errors: []});
 });
 
 /**

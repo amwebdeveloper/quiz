@@ -215,6 +215,19 @@ label {
 	display: inline-block;
 	width: calc(100% / 2 - .2em);
 }
+/** errores **/
+#errors p {
+	text-align: left;
+	padding: .7em 1em;
+	background: #FCF8E3;
+	color: #8A6D3B;
+	border: 1px solid #FAEBCC;
+	border-radius: 2px;
+}
+#errors p:before {
+	content: "Advertencia: ";
+	font-weight: bold;
+}
 @media screen and (min-width:40em) {
 	#title, nav {display: inline-block; width: 55%;}
 	#title {width: 40%;}
