@@ -69,6 +69,30 @@ exports.answer = function (req, res) {
 	);
 };
 
+/**
+ * Formulario para crear preguntas
+ */
+exports.new = function (req, res) {
+	var quiz = models.Quiz.build(
+		{
+			pregunta: "Pregunta",
+			respuesta: "Respuesta"
+		}		
+	);
+	res.render('quizes/new', {quiz: quiz});
+};
+/**
+ * Controlador para crear preguntas
+ */
+exports.create = function (req, res) {
+	var quiz = models.Quiz.build(req.body.quiz);	
+	quiz.save({fields: ["pregunta", "respuesta"]}).then(function () {
+		res.redirect("/quizes");
+	});
+};
+/**
+ * Página de autor
+ */
 exports.author = function (req, res) {
 	res.render(
 		'author',
