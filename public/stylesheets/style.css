@@ -58,7 +58,10 @@ select {
 	width: 100%;
 	border: 1px solid #CCC;
 	background: #FFF;
-	padding: .5em 1em;
+	padding: 0 .5em;
+}
+option {
+	padding: .5em;
 }
 header, main, footer {
 	font-size: 1.8em;
@@ -245,15 +248,6 @@ label {
 	margin-left: 1em;
 }
 /** questions **/
-#question{
-	width: 40%;
-}
-#id {
-	width: 10%;
-}
-#action {
-	width: 30%;
-}
 #search-questions input{
 	display: inline-block;
 	width: calc(100% / 2 - .2em);

@@ -9,7 +9,6 @@
 <table id="questions">
 	<thead>
 		<tr>
-			<th id="id">Id</th>
 			<th id="question">Pregunta</th>
 			<th id="tematica">Temática</th>
 			<th id="action">Acciones</th>
@@ -20,7 +19,6 @@
 		for (var i=0; i<quizes.length; i++) {
 		%>
 		<tr>
-			<td><%= quizes[i].id %></td>
 			<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
 			<td><%= quizes[i].tematica %></td>
 			<td>
