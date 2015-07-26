@@ -49,9 +49,16 @@ tbody tr:hover {
 td a {
 	display: block;
 }
+select,
 input {
 	font-size: 1em;
 	font-family: 'Open Sans';
+}
+select {
+	width: 100%;
+	border: 1px solid #CCC;
+	background: #FFF;
+	padding: .5em 1em;
 }
 header, main, footer {
 	font-size: 1.8em;
@@ -127,7 +134,7 @@ main {
 	padding: 0;
 }
 main .content {
-	max-width: 30em;
+	max-width: 50em;
 }
 a {
 	color: #3299BB;
@@ -217,6 +224,7 @@ button.min {
 	background: #29ABA4;
 	border-color: #29ABA4;
 	font-size: .85em;
+	margin-bottom: .5em;
 }
 input[type="submit"]:hover {
 	cursor: pointer;

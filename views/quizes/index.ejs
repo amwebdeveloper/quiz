@@ -11,6 +11,7 @@
 		<tr>
 			<th id="id">Id</th>
 			<th id="question">Pregunta</th>
+			<th id="tematica">Temática</th>
 			<th id="action">Acciones</th>
 		</tr>
 	</thead>
@@ -21,6 +22,7 @@
 		<tr>
 			<td><%= quizes[i].id %></td>
 			<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+			<td><%= quizes[i].tematica %></td>
 			<td>
 				<a class="e-edit button min" href="/quizes/<%= quizes[i].id %>/edit">Editar</a>
 				<form id="eliminar" method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
