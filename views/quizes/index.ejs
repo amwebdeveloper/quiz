@@ -11,6 +11,7 @@
 		<tr>
 			<th id="id">Id</th>
 			<th id="question">Pregunta</th>
+			<th id="action">Acciones</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -20,6 +21,7 @@
 		<tr>
 			<td><%= quizes[i].id %></td>
 			<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+			<td><a class="e-edit button min" href="/quizes/<%= quizes[i].id %>/edit">Editar</a></td>
 		</tr>
 		<% } %>
 	</tbody>

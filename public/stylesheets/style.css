@@ -93,7 +93,7 @@ a[class^="e-"] {
 a[class^="e-"]:before,
 a[class^="e-"]:after {
 	font-family: "Ionicons";
-	margin-right: .2em;	
+	margin-right: .3em;	
 }
 .e-github:before {
 	content: "\f233";
@@ -103,6 +103,9 @@ a[class^="e-"]:after {
 }
 .e-author:before {
 	content: "\f2d8";
+}
+.e-edit:before {
+	content: "\f2bf";
 }
 main {
 	position: relative;
@@ -185,6 +188,13 @@ input[type="submit"] {
 }
 .button {
 	text-decoration: none;
+}
+.button.min {
+	padding: 0 .2em;
+	text-transform: none;
+	background: #29ABA4;
+	border-color: #29ABA4;
+	font-size: .85em;
 }
 input[type="submit"]:hover {
 	cursor: pointer;
