@@ -6,3 +6,14 @@
 	</div>
 	<input value="Enviar" type="submit" tabindex="2"/>	
 </form>
+
+<div id="comentarios">
+	<h3>Comentarios</h3>
+	<p><a class="button" href="/quizes/<%= quiz.id %>/comments/new">Comentar</a></p>
+	<%for(i in quiz.Comments) {%>
+		<div class="comentario">
+			<p><time><%= quiz.Comments[i].createdAt %></time></p>
+			<p><%= quiz.Comments[i].texto %></p>
+		</div>
+	<% } %>
+</div>
