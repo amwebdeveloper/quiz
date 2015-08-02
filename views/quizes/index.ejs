@@ -11,7 +11,9 @@
 		<tr>
 			<th id="question">Pregunta</th>
 			<th id="tematica">Temática</th>
+			<% if (session.user) {%>
 			<th id="action">Acciones</th>
+			<% } %>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,15 +23,19 @@
 		<tr>
 			<td><a href="/quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
 			<td><%= quizes[i].tematica %></td>
+			
+			<% if (session.user) {%>
 			<td>
 				<a class="e-edit button min" href="/quizes/<%= quizes[i].id %>/edit">Editar</a>
 				<form id="eliminar" method="post" action="/quizes/<%= quizes[i].id %>?_method=delete">
 					<button class="e-delete button min" type="submit" onclick="return confirm('Está seguro');">Eliminar</button>
 				</form>
 			</td>
+			<% } %>			
 		</tr>
 		<% } %>
 	</tbody>
 </table>
-
+<% if (session.user) {%>
 <p><a class="button" href="/quizes/new">Crear pregunta</a></p>
+<% } %>

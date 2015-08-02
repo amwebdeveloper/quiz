@@ -23,7 +23,6 @@ exports.create = function (req, res) {
 			return;
 		}		
 		req.session.user = {id:user.id, username:user.username};
-		// res.redirect(req.session.redir.toString());
 		res.redirect('/');
 	});
 };
@@ -34,4 +33,15 @@ exports.create = function (req, res) {
 exports.destroy = function (req, res) {
 	delete req.session.user;
 	res.redirect('/');
+};
+
+/**
+ * Autorización
+ */
+exports.loginRequired = function (req, res, next) {
+	if (req.session.user) {
+		next();
+	} else {
+		res.redirect('/login');
+	}
 };
