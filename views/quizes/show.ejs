@@ -11,9 +11,14 @@
 	<h3>Comentarios</h3>
 	<p><a class="button" href="/quizes/<%= quiz.id %>/comments/new">Comentar</a></p>
 	<%for(i in quiz.Comments) {%>
+		<% if (quiz.Comments[i].publicado || session.user) {%>
 		<div class="comentario">
 			<p><time><%= quiz.Comments[i].createdAt %></time></p>
 			<p><%= quiz.Comments[i].texto %></p>
+			<% if (!quiz.Comments[i].publicado && session.user) {%>
+			<p><a href="/quizes/<%= quiz.id %>/comments/<%= quiz.Comments[i].id %>/publish" class="e-publicar button">Publicar</a></p>
+			<% } %>
 		</div>
+		<% } %>
 	<% } %>
 </div>

@@ -11,7 +11,7 @@ var users = {
 		pepe: {
 			id: 2,
 			username: "pepe",
-			paswword: "pepe"
+			password: "pepe"
 		}
 };
 
