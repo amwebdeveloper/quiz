@@ -7,6 +7,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+  	<div id="preheader">
+		<div class="content">
+			<div id="usuario">
+				<% if (!session.user) { %>
+				<p><a href="/login" class="e-login button">Login</a></p>
+				<% } else { %>
+				<p><span><%= session.user.username %></span> <a href="/logout" class="e-logout button">Logout</a></p>
+				<% } %>
+			</div>
+		</div>
+  	</div>
 	<header>
 		<div class="content">
 			<div id="title">

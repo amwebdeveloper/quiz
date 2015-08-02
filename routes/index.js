@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var quizController = require('../controllers/quiz_controller');
 var commentController = require('../controllers/comment_controller');
+var sessionController = require('../controllers/session_controller');
 
 /**
  * Rutas o routes
@@ -14,6 +15,11 @@ router.get('/', function(req, res, next) {
  * Autoload
  */
 router.param('quizId', quizController.load);
+
+/** sessiones **/
+router.get('/login',						sessionController.new);
+router.post('/login',						sessionController.create);
+router.get('/logout',						sessionController.destroy);
 
 /**
  * Definición de las rutas.
@@ -32,6 +38,8 @@ router.delete('/quizes/:quizId(\\d+)', 		quizController.destroy);
 /** comentarios **/
 router.get('/quizes/:quizId(\\d+)/comments/new',commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments',commentController.create);
+
+
 
 /** autor **/
 router.get('/author', 						quizController.author);
